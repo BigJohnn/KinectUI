@@ -1,0 +1,26 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:sys="clr-namespace:System;assembly=mscorlib">
+	<!-- Resource dictionary entries should be defined here. -->
+	<sys:String x:Key="WinTitle">3DReconstruction v1.0</sys:String>
+    <sys:String x:Key="LangTitl">Language</sys:String>
+    <sys:String x:Key="File">File</sys:String>
+    <sys:String x:Key="New">New</sys:String>
+    <sys:String x:Key="Open">Open</sys:String>
+    <sys:String x:Key="Save">Save</sys:String>
+    <sys:String x:Key="Exit">Exit</sys:String>
+    <sys:String x:Key="reconstruction">Reconstruction</sys:String>
+    <sys:String x:Key="processing">Processing</sys:String>
+    <sys:String x:Key="Parameters">Parameters</sys:String>
+    <sys:String x:Key="Start">Start</sys:String>
+    <sys:String x:Key="Stop">Stop</sys:String>
+    <sys:String x:Key="Reset">Reset</sys:String>
+    <sys:String x:Key="Near">Near Mode</sys:String>
+    <sys:String x:Key="Color">Capture Color</sys:String>
+    <sys:String x:Key="DeleteTools">DeleteTools</sys:String>
+    <sys:String x:Key="MeasureDistt">Distance Measure</sys:String>
+    <sys:String x:Key="Display">Display</sys:String>
+    <sys:String x:Key="Note1">Click ‘Near Mode’ to change sensor range, and ‘Reset Reconstruction’ to clear!</sys:String>
+    <sys:String x:Key="Note2">Processing Mode！</sys:String>
+</ResourceDictionary>

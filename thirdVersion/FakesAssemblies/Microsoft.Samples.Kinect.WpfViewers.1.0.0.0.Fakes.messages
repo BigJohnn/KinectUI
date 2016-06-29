@@ -1,0 +1,15 @@
+F:\Kinect\thirdVersion\thirdVersion\Fakes\Microsoft.Samples.Kinect.WpfViewers.fakes : warning : 无法为 Microsoft.Samples.Kinect.WpfViewers.KinectSettings 生成存根: 类型对 exported or assembly(Microsoft.Samples.Kinect.WpfViewers.1.0.0.0.Fakes) 不可见。
+F:\Kinect\thirdVersion\thirdVersion\Fakes\Microsoft.Samples.Kinect.WpfViewers.fakes : warning : 无法为 Microsoft.Samples.Kinect.WpfViewers.ImageType 生成存根: 类型是一个值类型。
+F:\Kinect\thirdVersion\thirdVersion\Fakes\Microsoft.Samples.Kinect.WpfViewers.fakes : warning : 无法为 Microsoft.Samples.Kinect.WpfViewers.TrackingMode 生成存根: 类型是一个值类型。
+F:\Kinect\thirdVersion\thirdVersion\Fakes\Microsoft.Samples.Kinect.WpfViewers.fakes : warning : 无法为 Microsoft.Samples.Kinect.WpfViewers.Properties.Resources 生成存根: 类型对 exported or assembly(Microsoft.Samples.Kinect.WpfViewers.1.0.0.0.Fakes) 不可见。
+F:\Kinect\thirdVersion\thirdVersion\Fakes\Microsoft.Samples.Kinect.WpfViewers.fakes : warning : 无法为 Microsoft.Samples.Kinect.WpfViewers.Properties.Settings 生成存根: 类型已密封。
+F:\Kinect\thirdVersion\thirdVersion\Fakes\Microsoft.Samples.Kinect.WpfViewers.fakes : warning : 无法为 <PrivateImplementationDetails>{EBD03262-D23D-44AE-BAC4-48F5C8AE55E9} 生成存根: 类型不受支持，因为存在内部限制。
+F:\Kinect\thirdVersion\thirdVersion\Fakes\Microsoft.Samples.Kinect.WpfViewers.fakes : warning : 无法为 Microsoft.Samples.Kinect.WpfViewers.KinectSettings 生成填充码: 类型对 exported or assembly(Microsoft.Samples.Kinect.WpfViewers.1.0.0.0.Fakes) 不可见。
+F:\Kinect\thirdVersion\thirdVersion\Fakes\Microsoft.Samples.Kinect.WpfViewers.fakes : warning : 无法为 Microsoft.Samples.Kinect.WpfViewers.ImageType 生成填充码: 类型是一个枚举。
+F:\Kinect\thirdVersion\thirdVersion\Fakes\Microsoft.Samples.Kinect.WpfViewers.fakes : warning : 无法为 Microsoft.Samples.Kinect.WpfViewers.TrackingMode 生成填充码: 类型是一个枚举。
+F:\Kinect\thirdVersion\thirdVersion\Fakes\Microsoft.Samples.Kinect.WpfViewers.fakes : warning : 无法为 Microsoft.Samples.Kinect.WpfViewers.KinectSkeletonViewer+<>c__DisplayClass5 生成填充码: 类型不受支持，因为存在内部限制。
+F:\Kinect\thirdVersion\thirdVersion\Fakes\Microsoft.Samples.Kinect.WpfViewers.fakes : warning : 无法为 Microsoft.Samples.Kinect.WpfViewers.KinectSkeletonViewer+<>c__DisplayClassd 生成填充码: 类型不受支持，因为存在内部限制。
+F:\Kinect\thirdVersion\thirdVersion\Fakes\Microsoft.Samples.Kinect.WpfViewers.fakes : warning : 无法为 Microsoft.Samples.Kinect.WpfViewers.KinectSkeletonViewer+ActivityWatcher 生成填充码: 类型对 exported or assembly(Microsoft.Samples.Kinect.WpfViewers.1.0.0.0.Fakes) 不可见。
+F:\Kinect\thirdVersion\thirdVersion\Fakes\Microsoft.Samples.Kinect.WpfViewers.fakes : warning : 无法为 Microsoft.Samples.Kinect.WpfViewers.Properties.Resources 生成填充码: 类型对 exported or assembly(Microsoft.Samples.Kinect.WpfViewers.1.0.0.0.Fakes) 不可见。
+F:\Kinect\thirdVersion\thirdVersion\Fakes\Microsoft.Samples.Kinect.WpfViewers.fakes : warning : 无法为 Microsoft.Samples.Kinect.WpfViewers.Properties.Settings 生成填充码: 类型对 exported or assembly(Microsoft.Samples.Kinect.WpfViewers.1.0.0.0.Fakes) 不可见。
+F:\Kinect\thirdVersion\thirdVersion\Fakes\Microsoft.Samples.Kinect.WpfViewers.fakes : warning : 无法为 <PrivateImplementationDetails>{EBD03262-D23D-44AE-BAC4-48F5C8AE55E9} 生成填充码: 类型不受支持，因为存在内部限制。

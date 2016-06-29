@@ -1,0 +1,681 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{73398923-01F6-49D2-B21E-B33452C9EF57}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KinectUI</RootNamespace>
+    <AssemblyName>thirdVersion</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <ExpressionBlendVersion>12.0.50716.0</ExpressionBlendVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>thirdVersion.App</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AssimpNet">
+      <HintPath>.\AssimpNet.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.WPF.Controls, Version=7.1.0.14, Culture=neutral, PublicKeyToken=ff0069e61369d6d6, processorArchitecture=MSIL" />
+    <Reference Include="DevComponents.WPF.Metro, Version=7.1.0.14, Culture=neutral, PublicKeyToken=ff0069e61369d6d6, processorArchitecture=MSIL" />
+    <Reference Include="DevComponents.WpfDock, Version=7.1.0.14, Culture=neutral, PublicKeyToken=ff0069e61369d6d6, processorArchitecture=MSIL" />
+    <Reference Include="DevComponents.WpfEditors, Version=7.1.0.14, Culture=neutral, PublicKeyToken=ff0069e61369d6d6, processorArchitecture=MSIL" />
+    <Reference Include="DevComponents.WpfRibbon, Version=7.1.0.14, Culture=neutral, PublicKeyToken=ff0069e61369d6d6, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Kinect, Version=1.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="OpenTK, Version=1.1.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL" />
+    <Reference Include="PresentationFramework.Luna" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="DelegateCommand.cs" />
+    <Compile Include="Observable.cs" />
+    <Compile Include="ScreenSpaceLines3D.cs" />
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GraphicsCamera.cs" />
+    <Compile Include="KinectFusionHelper.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Resources\StringResource.en-US.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\StringResource.zh-CN.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MathUtils.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\0.jpg" />
+    <Resource Include="Images\1.jpg" />
+    <Resource Include="Images\10.jpg" />
+    <Resource Include="Images\2.jpg" />
+    <Resource Include="Images\3.jpg" />
+    <Resource Include="Images\4.jpg" />
+    <Resource Include="Images\5.jpg" />
+    <Resource Include="Images\6.jpg" />
+    <Resource Include="Images\7.jpg" />
+    <Resource Include="Images\8.jpg" />
+    <Resource Include="Images\9.jpg" />
+    <Resource Include="Images\CheckedHover.png" />
+    <Resource Include="Images\CheckedNormal.png" />
+    <Resource Include="Images\Kinect.ico" />
+    <Resource Include="Images\Logo.png" />
+    <Resource Include="Images\MeshHover.png" />
+    <Resource Include="Images\MeshNormal.png" />
+    <Resource Include="Images\RadioCheckedHover.png" />
+    <Resource Include="Images\RadioCheckedNormal.png" />
+    <Resource Include="Images\RadioUncheckedHover.png" />
+    <Resource Include="Images\RadioUncheckedNormal.png" />
+    <Resource Include="Images\ResetHover.png" />
+    <Resource Include="Images\ResetNormal.png" />
+    <Resource Include="Images\Status.png" />
+    <Resource Include="Images\UncheckedHover.png" />
+    <Resource Include="Images\UncheckedNormal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\0001.ICO" />
+    <Resource Include="Icon\0002.ICO" />
+    <Resource Include="Icon\0003.ICO" />
+    <Resource Include="Icon\0004.ICO" />
+    <Resource Include="Icon\001.ICO" />
+    <Resource Include="Icon\002.ICO" />
+    <Resource Include="Icon\010101.ICO" />
+    <Resource Include="Icon\01012.ICO" />
+    <Resource Include="Icon\1.ICO" />
+    <Resource Include="Icon\1005.ICO" />
+    <Resource Include="Icon\135.ICO" />
+    <Resource Include="Icon\19.ICO" />
+    <Resource Include="Icon\2.ICO" />
+    <Resource Include="Icon\221.ICO" />
+    <Resource Include="Icon\227.ICO" />
+    <Resource Include="Icon\241.ICO" />
+    <Resource Include="Icon\246.ICO" />
+    <Resource Include="Icon\247.ICO" />
+    <Resource Include="Icon\250.ICO" />
+    <Resource Include="Icon\251.ICO" />
+    <Resource Include="Icon\255.ICO" />
+    <Resource Include="Icon\264.ICO" />
+    <Resource Include="Icon\268.ICO" />
+    <Resource Include="Icon\269.ICO" />
+    <Resource Include="Icon\272.ICO" />
+    <Resource Include="Icon\275.ICO" />
+    <Resource Include="Icon\281.ICO" />
+    <Resource Include="Icon\3.ICO" />
+    <Resource Include="Icon\322.ICO" />
+    <Resource Include="Icon\325.ICO" />
+    <Resource Include="Icon\327.ICO" />
+    <Resource Include="Icon\4.ICO" />
+    <Resource Include="Icon\44.ICO" />
+    <Resource Include="Icon\45523.ICO" />
+    <Resource Include="Icon\555.ICO" />
+    <Resource Include="Icon\6.ICO" />
+    <Resource Include="Icon\62.ICO" />
+    <Resource Include="Icon\6523.ICO" />
+    <Resource Include="Icon\7.ICO" />
+    <Resource Include="Icon\About.ico" />
+    <Resource Include="Icon\Accounts.ico" />
+    <Resource Include="Icon\Address Book.ico" />
+    <Resource Include="Icon\Air Brush.ico" />
+    <Resource Include="Icon\Align-Centre-2.ico" />
+    <Resource Include="Icon\Align-Centre.ico" />
+    <Resource Include="Icon\Align-Full-2.ico" />
+    <Resource Include="Icon\Align-Full.ico" />
+    <Resource Include="Icon\Align-Left-2.ico" />
+    <Resource Include="Icon\Align-Left.ico" />
+    <Resource Include="Icon\Align-Right-2.ico" />
+    <Resource Include="Icon\Align-Right.ico" />
+    <Resource Include="Icon\Arrow-Left Right.ico" />
+    <Resource Include="Icon\Arrow-Up Down.ico" />
+    <Resource Include="Icon\Attachment.ico" />
+    <Resource Include="Icon\Auto Correct-Options.ico" />
+    <Resource Include="Icon\Auto-Type.ico" />
+    <Resource Include="Icon\Back.ico" />
+    <Resource Include="Icon\Bar Code.ico" />
+    <Resource Include="Icon\Bold.ico" />
+    <Resource Include="Icon\Book-Open.ico" />
+    <Resource Include="Icon\Book-Search.ico" />
+    <Resource Include="Icon\Books.ico" />
+    <Resource Include="Icon\Borders and Shading.ico" />
+    <Resource Include="Icon\Box-Closed-2.ico" />
+    <Resource Include="Icon\Box-Closed.ico" />
+    <Resource Include="Icon\Box-Open-2.ico" />
+    <Resource Include="Icon\Box-Open.ico" />
+    <Resource Include="Icon\Bullets-2.ico" />
+    <Resource Include="Icon\Bullets.ico" />
+    <Resource Include="Icon\Calculator.ico" />
+    <Resource Include="Icon\Calendar-Go To Date.ico" />
+    <Resource Include="Icon\Calendar-Search.ico" />
+    <Resource Include="Icon\Calendar-Select Day.ico" />
+    <Resource Include="Icon\Calendar-Select Month.ico" />
+    <Resource Include="Icon\Calendar-Select Week.ico" />
+    <Resource Include="Icon\Calendar-Select Work Week.ico" />
+    <Resource Include="Icon\Calendar.ico" />
+    <Resource Include="Icon\Camera-Photo.ico" />
+    <Resource Include="Icon\Camera.ico" />
+    <Resource Include="Icon\Card File.ico" />
+    <Resource Include="Icon\Card-Add.ico" />
+    <Resource Include="Icon\Card-Delete.ico" />
+    <Resource Include="Icon\Card-Edit.ico" />
+    <Resource Include="Icon\Card-New.ico" />
+    <Resource Include="Icon\Card-Next.ico" />
+    <Resource Include="Icon\Card-Previous.ico" />
+    <Resource Include="Icon\Card-Remove.ico" />
+    <Resource Include="Icon\Card-Search.ico" />
+    <Resource Include="Icon\Card.ico" />
+    <Resource Include="Icon\CD-Burn.ico" />
+    <Resource Include="Icon\CD-In Case.ico" />
+    <Resource Include="Icon\CD-ROM.ICO" />
+    <Resource Include="Icon\Center Across Cells.ico" />
+    <Resource Include="Icon\Certificate.ico" />
+    <Resource Include="Icon\Chart-Bar.ico" />
+    <Resource Include="Icon\Chart-Line.ico" />
+    <Resource Include="Icon\Chart-Pie.ico" />
+    <Resource Include="Icon\Chart-Point.ico" />
+    <Resource Include="Icon\Chart.ico" />
+    <Resource Include="Icon\Clean.ico" />
+    <Resource Include="Icon\Clear.ico" />
+    <Resource Include="Icon\Clipboard.ico" />
+    <Resource Include="Icon\Clock.ico" />
+    <Resource Include="Icon\Close.ico" />
+    <Resource Include="Icon\CodeFans.net.ico" />
+    <Resource Include="Icon\Colour Picker.ico" />
+    <Resource Include="Icon\Columns-2.ico" />
+    <Resource Include="Icon\Columns.ico" />
+    <Resource Include="Icon\Command Prompt.ico" />
+    <Resource Include="Icon\Compress.ico" />
+    <Resource Include="Icon\Computer.ico" />
+    <Resource Include="Icon\Connect.ico" />
+    <Resource Include="Icon\Contact-Add.ico" />
+    <Resource Include="Icon\Contact-Delete.ico" />
+    <Resource Include="Icon\Contact-Edit.ico" />
+    <Resource Include="Icon\Contact-New.ico" />
+    <Resource Include="Icon\Contact-Remove.ico" />
+    <Resource Include="Icon\Contact-Search.ico" />
+    <Resource Include="Icon\Contact.ico" />
+    <Resource Include="Icon\Copy.ico" />
+    <Resource Include="Icon\Cross.ico" />
+    <Resource Include="Icon\Currency-Notes.ico" />
+    <Resource Include="Icon\Currency.ico" />
+    <Resource Include="Icon\Cut.ico" />
+    <Resource Include="Icon\Database-Add.ico" />
+    <Resource Include="Icon\Database-Close.ico" />
+    <Resource Include="Icon\Database-Delete.ico" />
+    <Resource Include="Icon\Database-Edit.ico" />
+    <Resource Include="Icon\Database-Filter.ico" />
+    <Resource Include="Icon\Database-New.ico" />
+    <Resource Include="Icon\Database-Open.ico" />
+    <Resource Include="Icon\Database-Properties.ico" />
+    <Resource Include="Icon\Database-Remove.ico" />
+    <Resource Include="Icon\Database-Save.ico" />
+    <Resource Include="Icon\Database-Schema.ico" />
+    <Resource Include="Icon\Database-Search.ico" />
+    <Resource Include="Icon\Database-Security.ico" />
+    <Resource Include="Icon\Database-Wizard.ico" />
+    <Resource Include="Icon\Database.ico" />
+    <Resource Include="Icon\Date-Time.ico" />
+    <Resource Include="Icon\Decompress.ico" />
+    <Resource Include="Icon\Delete-Blue.ico" />
+    <Resource Include="Icon\DELETE.ICO" />
+    <Resource Include="Icon\Design.ico" />
+    <Resource Include="Icon\Desktop.ico" />
+    <Resource Include="Icon\Dictionary.ico" />
+    <Resource Include="Icon\Disconnect.ico" />
+    <Resource Include="Icon\Drawing.ico" />
+    <Resource Include="Icon\Dtafalonso-Ios8-TextEdit.ico" />
+    <Resource Include="Icon\Edit.ico" />
+    <Resource Include="Icon\Equaliser.ico" />
+    <Resource Include="Icon\Execute.ico" />
+    <Resource Include="Icon\Exit.ico" />
+    <Resource Include="Icon\Export.ico" />
+    <Resource Include="Icon\FAVORITE.ICO" />
+    <Resource Include="Icon\Favorites.ico" />
+    <Resource Include="Icon\File3d.ico" />
+    <Resource Include="Icon\Fill-Down.ico" />
+    <Resource Include="Icon\Fill-Left.ico" />
+    <Resource Include="Icon\Fill-Right.ico" />
+    <Resource Include="Icon\Fill-Up.ico" />
+    <Resource Include="Icon\Fill.ico" />
+    <Resource Include="Icon\Filter.ico" />
+    <Resource Include="Icon\Flag-Delete.ico" />
+    <Resource Include="Icon\Flag-Next.ico" />
+    <Resource Include="Icon\Flag-Previous.ico" />
+    <Resource Include="Icon\Flag.ico" />
+    <Resource Include="Icon\Flat-Icons.com-Square-Cloud.ico" />
+    <Resource Include="Icon\Flat-Icons.com-Square-Newsletter.ico" />
+    <Resource Include="Icon\Flat-Icons.com-Square-Power.ico" />
+    <Resource Include="Icon\Flat-Icons.com-Square-Save.ico" />
+    <Resource Include="Icon\Flow Chart.ico" />
+    <Resource Include="Icon\Folder List.ico" />
+    <Resource Include="Icon\Folder-Closed.ico" />
+    <Resource Include="Icon\Folder-Delete.ico" />
+    <Resource Include="Icon\Folder-New.ico" />
+    <Resource Include="Icon\Folder-Options.ico" />
+    <Resource Include="Icon\Folder-Search.ico" />
+    <Resource Include="Icon\Folder.ico" />
+    <Resource Include="Icon\Footer.ico" />
+    <Resource Include="Icon\Format Painter.ico" />
+    <Resource Include="Icon\Format-Font Size.ico" />
+    <Resource Include="Icon\Format-Font.ico" />
+    <Resource Include="Icon\Format-Paragraph.ico" />
+    <Resource Include="Icon\Format-Percentage.ico" />
+    <Resource Include="Icon\Formatting-Remove.ico" />
+    <Resource Include="Icon\Forward.ico" />
+    <Resource Include="Icon\Full Screen-New.ico" />
+    <Resource Include="Icon\Full Screen.ico" />
+    <Resource Include="Icon\Function.ico" />
+    <Resource Include="Icon\Go To Line.ico" />
+    <Resource Include="Icon\Grid-2.ico" />
+    <Resource Include="Icon\Grid-Auto Format-2.ico" />
+    <Resource Include="Icon\Grid-Auto Format.ico" />
+    <Resource Include="Icon\Grid-Column Width.ico" />
+    <Resource Include="Icon\Grid-Delete Cell.ico" />
+    <Resource Include="Icon\Grid-Delete Column.ico" />
+    <Resource Include="Icon\Grid-Delete Row.ico" />
+    <Resource Include="Icon\Grid-Delete-2.ico" />
+    <Resource Include="Icon\Grid-Delete.ico" />
+    <Resource Include="Icon\Grid-Insert Cell.ico" />
+    <Resource Include="Icon\Grid-Insert Column Left.ico" />
+    <Resource Include="Icon\Grid-Insert Column Right.ico" />
+    <Resource Include="Icon\Grid-Insert Column.ico" />
+    <Resource Include="Icon\Grid-Insert Row Above.ico" />
+    <Resource Include="Icon\Grid-Insert Row Below.ico" />
+    <Resource Include="Icon\Grid-Insert Row.ico" />
+    <Resource Include="Icon\Grid-Merge Cells.ico" />
+    <Resource Include="Icon\Grid-New-2.ico" />
+    <Resource Include="Icon\Grid-New.ico" />
+    <Resource Include="Icon\Grid-Options-2.ico" />
+    <Resource Include="Icon\Grid-Options.ico" />
+    <Resource Include="Icon\Grid-Row Height.ico" />
+    <Resource Include="Icon\Grid-Select All-2.ico" />
+    <Resource Include="Icon\Grid-Select All.ico" />
+    <Resource Include="Icon\Grid-Select Cell-2.ico" />
+    <Resource Include="Icon\Grid-Select Cell.ico" />
+    <Resource Include="Icon\Grid-Select Column-2.ico" />
+    <Resource Include="Icon\Grid-Select Column.ico" />
+    <Resource Include="Icon\Grid-Select Row-2.ico" />
+    <Resource Include="Icon\Grid-Select Row.ico" />
+    <Resource Include="Icon\Grid-Split Cells.ico" />
+    <Resource Include="Icon\Grid-Wizard-2.ico" />
+    <Resource Include="Icon\Grid-Wizard.ico" />
+    <Resource Include="Icon\Grid.ico" />
+    <Resource Include="Icon\Hand Held.ico" />
+    <Resource Include="Icon\Hand Shake.ico" />
+    <Resource Include="Icon\Header and Footer-Toggle.ico" />
+    <Resource Include="Icon\Header and Footer.ico" />
+    <Resource Include="Icon\Header-Next.ico" />
+    <Resource Include="Icon\Header-Previous.ico" />
+    <Resource Include="Icon\Header.ico" />
+    <Resource Include="Icon\Help.ico" />
+    <Resource Include="Icon\Highlighter.ico" />
+    <Resource Include="Icon\History.ico" />
+    <Resource Include="Icon\Home.ico" />
+    <Resource Include="Icon\Icondesigner.net-Hyperion-3D-Icons.ico" />
+    <Resource Include="Icon\ict.jpg" />
+    <Resource Include="Icon\Image-Brightness.ico" />
+    <Resource Include="Icon\Image-Colour.ico" />
+    <Resource Include="Icon\Image-Contrast.ico" />
+    <Resource Include="Icon\Image-Crop.ico" />
+    <Resource Include="Icon\Image-Flip.ico" />
+    <Resource Include="Icon\Image-Mirror.ico" />
+    <Resource Include="Icon\Image-Paint.ico" />
+    <Resource Include="Icon\Image-Resize.ico" />
+    <Resource Include="Icon\Image-Rotate.ico" />
+    <Resource Include="Icon\Image-Select.ico" />
+    <Resource Include="Icon\Image.ico" />
+    <Resource Include="Icon\Import.ico" />
+    <Resource Include="Icon\Indent-Decrease-2.ico" />
+    <Resource Include="Icon\Indent-Decrease.ico" />
+    <Resource Include="Icon\Indent-Increase-2.ico" />
+    <Resource Include="Icon\Indent-Increase.ico" />
+    <Resource Include="Icon\Insert-File.ico" />
+    <Resource Include="Icon\Insert-Image.ico" />
+    <Resource Include="Icon\Insert-Object.ico" />
+    <Resource Include="Icon\Insert.ico" />
+    <Resource Include="Icon\Invoice.ico" />
+    <Resource Include="Icon\Italic.ico" />
+    <Resource Include="Icon\Key.ico" />
+    <Resource Include="Icon\Landscape.ico" />
+    <Resource Include="Icon\Launch.ico" />
+    <Resource Include="Icon\Letter.ico" />
+    <Resource Include="Icon\Line Spacing-2.ico" />
+    <Resource Include="Icon\Line Spacing-3.ico" />
+    <Resource Include="Icon\Line Spacing.ico" />
+    <Resource Include="Icon\Link.ico" />
+    <Resource Include="Icon\Lock.ico" />
+    <Resource Include="Icon\Mail-Forward.ico" />
+    <Resource Include="Icon\Mail-In Box-2.ico" />
+    <Resource Include="Icon\Mail-In Box.ico" />
+    <Resource Include="Icon\Mail-In-Out Box.ico" />
+    <Resource Include="Icon\Mail-New.ico" />
+    <Resource Include="Icon\Mail-Out Box-2.ico" />
+    <Resource Include="Icon\Mail-Out Box.ico" />
+    <Resource Include="Icon\Mail-Reply To All.ico" />
+    <Resource Include="Icon\Mail-Reply.ico" />
+    <Resource Include="Icon\Mail-Search.ico" />
+    <Resource Include="Icon\Mail-Send and Receive.ico" />
+    <Resource Include="Icon\Mail.ico" />
+    <Resource Include="Icon\Media.ico" />
+    <Resource Include="Icon\Microphone.ico" />
+    <Resource Include="Icon\Midi Keyboard.ico" />
+    <Resource Include="Icon\Minus.ico" />
+    <Resource Include="Icon\mm-Eject.ico" />
+    <Resource Include="Icon\mm-Fast Forward.ico" />
+    <Resource Include="Icon\mm-First.ico" />
+    <Resource Include="Icon\mm-Last.ico" />
+    <Resource Include="Icon\mm-Pause.ico" />
+    <Resource Include="Icon\mm-Play.ico" />
+    <Resource Include="Icon\mm-Rewind.ico" />
+    <Resource Include="Icon\mm-Stop.ico" />
+    <Resource Include="Icon\Monitor.ico" />
+    <Resource Include="Icon\Movie.ico" />
+    <Resource Include="Icon\Musical Note-2.ico" />
+    <Resource Include="Icon\Musical Note.ico" />
+    <Resource Include="Icon\New.ico" />
+    <Resource Include="Icon\Note-Add.ico" />
+    <Resource Include="Icon\Note-Delete.ico" />
+    <Resource Include="Icon\Note-Edit.ico" />
+    <Resource Include="Icon\Note-New.ico" />
+    <Resource Include="Icon\Note-Next.ico" />
+    <Resource Include="Icon\Note-Previous.ico" />
+    <Resource Include="Icon\Note-Remove.ico" />
+    <Resource Include="Icon\Note-Search.ico" />
+    <Resource Include="Icon\Note.ico" />
+    <Resource Include="Icon\Notepad.ico" />
+    <Resource Include="Icon\Notes.ico" />
+    <Resource Include="Icon\Number of Pages.ico" />
+    <Resource Include="Icon\Numbering-2.ico" />
+    <Resource Include="Icon\Numbering.ico" />
+    <Resource Include="Icon\Object-Bring To Front.ico" />
+    <Resource Include="Icon\Object-Select.ico" />
+    <Resource Include="Icon\Object-Send To Back.ico" />
+    <Resource Include="Icon\Open.ico" />
+    <Resource Include="Icon\Outline-2.ico" />
+    <Resource Include="Icon\Outline.ico" />
+    <Resource Include="Icon\Page Number.ico" />
+    <Resource Include="Icon\Page-Break.ico" />
+    <Resource Include="Icon\Page-Invert.ico" />
+    <Resource Include="Icon\Page-Next.ico" />
+    <Resource Include="Icon\Page-Previous.ico" />
+    <Resource Include="Icon\Page-Setup.ico" />
+    <Resource Include="Icon\Paintbrush.ico" />
+    <Resource Include="Icon\Parcel.ico" />
+    <Resource Include="Icon\Paste.ico" />
+    <Resource Include="Icon\Permission.ico" />
+    <Resource Include="Icon\Phone.ico" />
+    <Resource Include="Icon\Planner.ico" />
+    <Resource Include="Icon\Plus.ico" />
+    <Resource Include="Icon\Portrait.ico" />
+    <Resource Include="Icon\Preview.ico" />
+    <Resource Include="Icon\Print-2.ico" />
+    <Resource Include="Icon\Print-Options-2.ico" />
+    <Resource Include="Icon\Print-Options.ico" />
+    <Resource Include="Icon\Print.ico" />
+    <Resource Include="Icon\Procedure.ico" />
+    <Resource Include="Icon\Process.ico" />
+    <Resource Include="Icon\Project-Gant Chart.ico" />
+    <Resource Include="Icon\Project.ico" />
+    <Resource Include="Icon\Properties.ico" />
+    <Resource Include="Icon\Push Pin.ico" />
+    <Resource Include="Icon\Recycle Bin.ico" />
+    <Resource Include="Icon\Redo.ico" />
+    <Resource Include="Icon\Refresh.ico" />
+    <Resource Include="Icon\Remove.ico" />
+    <Resource Include="Icon\Rename.ico" />
+    <Resource Include="Icon\Report-2.ico" />
+    <Resource Include="Icon\Report-Bound.ico" />
+    <Resource Include="Icon\Report.ico" />
+    <Resource Include="Icon\Research.ico" />
+    <Resource Include="Icon\Ruler-Formatting.ico" />
+    <Resource Include="Icon\Ruler.ico" />
+    <Resource Include="Icon\Save All.ico" />
+    <Resource Include="Icon\Save As Html.ico" />
+    <Resource Include="Icon\Save As.ico" />
+    <Resource Include="Icon\Save Draft.ico" />
+    <Resource Include="Icon\Save.ico" />
+    <Resource Include="Icon\Script.ico" />
+    <Resource Include="Icon\Search-Next.ico" />
+    <Resource Include="Icon\Search-Previous.ico" />
+    <Resource Include="Icon\Search-Replace.ico" />
+    <Resource Include="Icon\Search.ico" />
+    <Resource Include="Icon\Select All.ico" />
+    <Resource Include="Icon\Slide Show.ico" />
+    <Resource Include="Icon\Slide.ico" />
+    <Resource Include="Icon\Software-Analyse.ico" />
+    <Resource Include="Icon\Sort-Ascending.ico" />
+    <Resource Include="Icon\Sort-Descending.ico" />
+    <Resource Include="Icon\Sound-Delete.ico" />
+    <Resource Include="Icon\Sound-Fade In.ico" />
+    <Resource Include="Icon\Sound-Fade Out.ico" />
+    <Resource Include="Icon\Sound-Join.ico" />
+    <Resource Include="Icon\Sound-Mark End.ico" />
+    <Resource Include="Icon\Sound-Mark Start.ico" />
+    <Resource Include="Icon\Sound-Split.ico" />
+    <Resource Include="Icon\Spell Check.ico" />
+    <Resource Include="Icon\sql.ICO" />
+    <Resource Include="Icon\Stop.ico" />
+    <Resource Include="Icon\Strikeout.ico" />
+    <Resource Include="Icon\Subscript.ico" />
+    <Resource Include="Icon\SUM.ICO" />
+    <Resource Include="Icon\Summary.ico" />
+    <Resource Include="Icon\Superscript.ico" />
+    <Resource Include="Icon\Support.ico" />
+    <Resource Include="Icon\Tables and Borders.ico" />
+    <Resource Include="Icon\Task-Search.ico" />
+    <Resource Include="Icon\Task.ico" />
+    <Resource Include="Icon\Thesaurus.ico" />
+    <Resource Include="Icon\Tick.ico" />
+    <Resource Include="Icon\Time Line.ico" />
+    <Resource Include="Icon\Tip.ico" />
+    <Resource Include="Icon\To Do List.ico" />
+    <Resource Include="Icon\To Lowercase.ico" />
+    <Resource Include="Icon\To Uppercase.ico" />
+    <Resource Include="Icon\Tools.ico" />
+    <Resource Include="Icon\Tree View-Add.ico" />
+    <Resource Include="Icon\Tree View-Delete.ico" />
+    <Resource Include="Icon\Tree View-Edit.ico" />
+    <Resource Include="Icon\Tree View-New.ico" />
+    <Resource Include="Icon\Tree View-Remove.ico" />
+    <Resource Include="Icon\Tree View-Search.ico" />
+    <Resource Include="Icon\Tree View.ico" />
+    <Resource Include="Icon\Underline.ico" />
+    <Resource Include="Icon\Undo.ico" />
+    <Resource Include="Icon\Unlock.ico" />
+    <Resource Include="Icon\User-2.ico" />
+    <Resource Include="Icon\User-Add-2.ico" />
+    <Resource Include="Icon\User-Add.ico" />
+    <Resource Include="Icon\User-Delete-2.ico" />
+    <Resource Include="Icon\User-Delete.ico" />
+    <Resource Include="Icon\User-Edit-2.ico" />
+    <Resource Include="Icon\User-Edit.ico" />
+    <Resource Include="Icon\User-New-2.ico" />
+    <Resource Include="Icon\User-New.ico" />
+    <Resource Include="Icon\User-Options-2.ico" />
+    <Resource Include="Icon\User-Options.ico" />
+    <Resource Include="Icon\User-Password-2.ico" />
+    <Resource Include="Icon\User-Password.ico" />
+    <Resource Include="Icon\User-Remove-2.ico" />
+    <Resource Include="Icon\User-Remove.ico" />
+    <Resource Include="Icon\User-Search-2.ico" />
+    <Resource Include="Icon\User-Search.ico" />
+    <Resource Include="Icon\User-Security-2.ico" />
+    <Resource Include="Icon\User-Security.ico" />
+    <Resource Include="Icon\User.ico" />
+    <Resource Include="Icon\Users-2.ico" />
+    <Resource Include="Icon\Users.ico" />
+    <Resource Include="Icon\View-Details.ico" />
+    <Resource Include="Icon\View-Large Icons.ico" />
+    <Resource Include="Icon\View-List.ico" />
+    <Resource Include="Icon\View-One Page.ico" />
+    <Resource Include="Icon\View-Page Width.ico" />
+    <Resource Include="Icon\View-Small Icons.ico" />
+    <Resource Include="Icon\Views.ico" />
+    <Resource Include="Icon\Volume-Mute.ico" />
+    <Resource Include="Icon\Volume.ico" />
+    <Resource Include="Icon\Warning.ico" />
+    <Resource Include="Icon\Waste Bin.ico" />
+    <Resource Include="Icon\Wilnichols-Alumin-Folders-IOS-Icons-Folder.ico" />
+    <Resource Include="Icon\Window-Add.ico" />
+    <Resource Include="Icon\Window-Bring To Front.ico" />
+    <Resource Include="Icon\Window-Cascade.ico" />
+    <Resource Include="Icon\Window-Close.ico" />
+    <Resource Include="Icon\Window-Delete.ico" />
+    <Resource Include="Icon\Window-Edit.ico" />
+    <Resource Include="Icon\Window-Maximise.ico" />
+    <Resource Include="Icon\Window-Minimise.ico" />
+    <Resource Include="Icon\Window-New.ico" />
+    <Resource Include="Icon\Window-Next.ico" />
+    <Resource Include="Icon\Window-Options.ico" />
+    <Resource Include="Icon\Window-Preview.ico" />
+    <Resource Include="Icon\Window-Previous.ico" />
+    <Resource Include="Icon\Window-Properties.ico" />
+    <Resource Include="Icon\Window-Remove.ico" />
+    <Resource Include="Icon\Window-Search.ico" />
+    <Resource Include="Icon\Window-Send To Back.ico" />
+    <Resource Include="Icon\Window-Split.ico" />
+    <Resource Include="Icon\Window-Tile Horizontal.ico" />
+    <Resource Include="Icon\Window-Tile Vertical.ico" />
+    <Resource Include="Icon\Window.ico" />
+    <Resource Include="Icon\Wizard.ico" />
+    <Resource Include="Icon\Word Count.ico" />
+    <Resource Include="Icon\Word Wrap-2.ico" />
+    <Resource Include="Icon\Word Wrap.ico" />
+    <Resource Include="Icon\Work Sheet-Auto Format.ico" />
+    <Resource Include="Icon\Work Sheet-Delete.ico" />
+    <Resource Include="Icon\Work Sheet-New.ico" />
+    <Resource Include="Icon\Work Sheet-Options.ico" />
+    <Resource Include="Icon\Work Sheet-Protect.ico" />
+    <Resource Include="Icon\Work Sheet-Rename.ico" />
+    <Resource Include="Icon\Work Sheet.ico" />
+    <Resource Include="Icon\Zoom-In.ico" />
+    <Resource Include="Icon\Zoom-Out.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Microsoft.Kinect.Toolkit.Fusion\Microsoft.Kinect.Toolkit.Fusion.csproj">
+      <Project>{58851747-f078-44e1-94b0-99ef065b3319}</Project>
+      <Name>Microsoft.Kinect.Toolkit.Fusion</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Microsoft.Kinect.Toolkit\Microsoft.Kinect.Toolkit.csproj">
+      <Project>{c6f9c31b-6130-4443-a5cc-ef0664552ecd}</Project>
+      <Name>Microsoft.Kinect.Toolkit</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Fonts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Microsoft.Samples.Kinect.WpfViewers.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Expression\Blend\.NETFramework\v4.5\Microsoft.Expression.Blend.WPF.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
